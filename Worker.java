@@ -20,9 +20,10 @@ public class Worker {
 
     public void start() {
         for (int i = 1; i <= 100; i++) {
-            callback.onDone("Task " + i + " is done");
             if (i == 33) {
                 errorCallback.onError("Task " + i + " is NOT done");
+            } else {
+                callback.onDone("Task " + i + " is done");
             }
         }
     }
